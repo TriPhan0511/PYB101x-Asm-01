@@ -80,12 +80,15 @@ cy = -4
 # cy = get_number('Nhập toạ độ y của điểm C: ')
 # print(f'Debug: ax = {ax} ay = {ay} bx = {bx} by = {by} cx = {cx} cy = {cy} ')
 
-bac_angle = compute_angle(bx, by, ax, ay, cx, cy)
-abc_angle = compute_angle(ax, ay, bx, by, cx, cy)
-bca_angle = compute_angle(bx, by, cx, cy, ax, ay)
-print(f'Góc BAC = {round(bac_angle)} (độ)')
-print(f'Góc ABC = {round(abc_angle)} (độ)')
-print(f'Góc BCA = {round(bca_angle)} (độ)')
+if is_triangle(ax, ay, bx, by, cx, cy):
+    bac_angle = compute_angle(bx, by, ax, ay, cx, cy)
+    abc_angle = compute_angle(ax, ay, bx, by, cx, cy)
+    bca_angle = compute_angle(bx, by, cx, cy, ax, ay)
+    print(f'Góc BAC = {round(bac_angle)} (độ)')
+    print(f'Góc ABC = {round(abc_angle)} (độ)')
+    print(f'Góc BCA = {round(bca_angle)} (độ)')
+
+# Test case 8: type of triangle
 
 
 

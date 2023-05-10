@@ -31,12 +31,13 @@ def main():
     #     exit()
 
     # 5. Tính các góc của tam giác
-    bac_angle = compute_angle(bx, by, ax, ay, cx, cy)
-    abc_angle = compute_angle(ax, ay, bx, by, cx, cy)
-    bca_angle = compute_angle(bx, by, cx, cy, ax, ay)
-    print(f'Góc BAC = {round(bac_angle)} (độ)')
-    print(f'Góc ABC = {round(abc_angle)} (độ)')
-    print(f'Góc BCA = {round(bca_angle)} (độ)')
+    if is_triangle(ax, ay, bx, by, cx, cy):
+        bac_angle = compute_angle(bx, by, ax, ay, cx, cy)
+        abc_angle = compute_angle(ax, ay, bx, by, cx, cy)
+        bca_angle = compute_angle(bx, by, cx, cy, ax, ay)
+        print(f'Góc BAC = {round(bac_angle)} (độ)')
+        print(f'Góc ABC = {round(abc_angle)} (độ)')
+        print(f'Góc BCA = {round(bca_angle)} (độ)')
 
 
 def create_vector(px1, py1, px2, py2):
@@ -50,7 +51,8 @@ def compute_angle(px1, py1, px2, py2, px3, py3):
     divisor = sqrt(vector1[0]**2 + vector1[1]**2) * sqrt(vector2[0]**2 + vector2[1]**2)
     if divisor != 0:
         cosine = dividend / divisor
-        return compute_degree_from_cosine(cosine)
+        # return compute_degree_from_cosine(cosine)
+        return round(compute_degree_from_cosine(cosine))
 
 
 def compute_angle_2(vector1, vector2):
