@@ -152,7 +152,7 @@ def is_obtuse_and_isosceles_triangle(ax, ay, bx, by, cx, cy):
 
 def is_normal_triangle(ax, ay, bx, by, cx, cy):
     if not is_triangle(ax, ay, bx, by, cx, cy):
-        return [False]
+        return None
     right_triangle = is_right_triangle(ax, ay, bx, by, cx, cy)
     obtuse_triangle = is_obtuse_triangle(ax, ay, bx, by, cx, cy)
     isosceles_triangle = is_isosceles_triangle(ax, ay, bx, by, cx, cy)
@@ -162,8 +162,8 @@ def is_normal_triangle(ax, ay, bx, by, cx, cy):
         print(f'DEBUG: obtuse_triangle[0]: {obtuse_triangle[0]}')
         print(f'DEBUG: isosceles_triangle[0]: {isosceles_triangle[0]}')
         print(f'DEBUG: equilateral_triangle[0]: {equilateral_triangle[0]}')
-        return [False]
-    return [True]
+        return False
+    return True
 
 
 

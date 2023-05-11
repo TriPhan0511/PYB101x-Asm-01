@@ -299,7 +299,10 @@ by = 1
 cx = 6
 cy = 1
 
-if is_normal_triangle(ax, ay, bx, by, cx, cy)[0]:
+test = is_normal_triangle(ax, ay, bx, by, cx, cy)
+if test is None:
+    print('Không phải là tam giác')
+elif test:
     print('Tam giác thường')
 else:
     print('Không phải tam giác thường')
